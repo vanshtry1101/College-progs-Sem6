@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>My Test Page</title>
+ </head>
+ <body>
+    <h2>Local Selenium Test</h2>
+    <input type="text" id="searchbox" placeholder="Type Something....">
+    <button onclick="showText()">Submit</button>
+    <p id="result"></p>
+    <script>
+        function showText(){
+            let txt = document.getElementById("searchbox").value;
+            document.getElementById("result").innerHTML = "You typed :" + txt;
+        }
+    </script>
+ </body>
+</html>
