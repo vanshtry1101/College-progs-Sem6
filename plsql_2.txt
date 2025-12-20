@@ -1,0 +1,40 @@
+#write a plsql block which will display shopping bill
+
+
+DECLARE
+  2    -- Variables for items
+  3    item1_name VARCHAR2(20) := '&iteml_name';
+  4    item1_qty  NUMBER := &item1_qty;
+  5    item1_price NUMBER := 500;
+  6    item2_name VARCHAR2(20) := '&item2_name';
+  7    item2_qty  NUMBER := &item2_qty;
+  8    item2_price NUMBER := 100;
+  9    item3_name VARCHAR2(20) := '&item3_name';
+ 10    item3_qty  NUMBER := &item_qty;
+ 11    item3_price NUMBER := 300;
+ 12    total_amount NUMBER := 0;
+ 13  BEGIN
+ 14    -- Calculate total
+ 15    total_amount := (item1_qty * item1_price) + (item2_qty * item2_price) + (item3_qty * item3_price);
+ 16    -- Display the bill
+ 17    DBMS_OUTPUT.PUT_LINE('--- Shopping Bill ---');
+ 18    DBMS_OUTPUT.PUT_LINE('Item    Qty    Price    Amount');
+ 19    DBMS_OUTPUT.PUT_LINE(item1_name || '    ' || item1_qty || '     ' || item1_price || '      ' || (item1_qty * item1_price));
+ 20    DBMS_OUTPUT.PUT_LINE(item2_name || '    ' || item2_qty || '     ' || item2_price || '      ' || (item2_qty * item2_price));
+ 21    DBMS_OUTPUT.PUT_LINE(item3_name || '    ' || item3_qty || '     ' || item3_price || '      ' || (item3_qty * item3_price));
+ 22    DBMS_OUTPUT.PUT_LINE('-----------------------------');
+ 23    DBMS_OUTPUT.PUT_LINE('Total Amount: ' || total_amount);
+ 24* END;
+
+#write a plsql block which will give total number of students genderwise
+
+
+ 1  DECLARE
+  2    male_count   NUMBER := 0;
+  3    female_count NUMBER := 0;
+  4  BEGIN
+  5    SELECT COUNT(*) INTO male_count FROM student WHERE gender = 'M';
+  6    SELECT COUNT(*) INTO female_count FROM student WHERE gender = 'F';
+  7    DBMS_OUTPUT.PUT_LINE('Total Male Students   : ' || male_count);
+  8    DBMS_OUTPUT.PUT_LINE('Total Female Students : ' || female_count);
+  9* END;
