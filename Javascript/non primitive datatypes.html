@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Objects</title>
+	</head>
+	<body>
+		<script>
+		/*
+			//object is combination of key and value pair 
+			
+			let student=['rinki',2];           //defining array 
+			console.log(student);              //to Print Array 
+			console.log(typeof(student[1]));
+			console.log(student[1]);           //to print single value of array =array[index]
+			console.log(student[0])
+			console.log(student.length);
+		*/
+			let dict={
+			breakfast:'bread',
+			lunch:'rajmarice',
+			dinner:'pizza',
+			drinks:{					       //object within object =nested object
+				firstone:'cocacola',
+				secondone:'pepsi',
+			},
+			preference:['drink1','drink2'],
+			
+			//anonymous function
+			result:function()					//creating method within object
+			{
+				console.log('hello');
+			}
+			};
+			console.log(dict.result());
+			//console.log(dict.preference[1]);				// to print value of array which is in object
+			console.log(dict);			
+			console.log(dict.drinks.firstone);				//to print value of nested object 
+			console.log(dict?.drinks?.firstone);			//to print value of nested object 
+			/*
+			
+			console.log(typeof dict);                // to check type of object
+			console.log(dict);                       //to print all items of object
+			dict.lunch='pasta';                      //to update any value in array
+			console.log(dict.dinner);                //syntax to print single value = object.key_name
+			console.log(dict['breakfast']);          //syntax to fetch value using keys =obj['key']
+			console.log(dict.lunch);
+			console.log(dict.length);
+			document.write(dict); 
+			
+			dict.drinks='pepsi';                    //adding item after creating object.
+			console.log(dict);
+			
+			delete dict.drinks;                     // for deleting any item from object.
+			console.log(dict);
+			
+			
+			for(let k in dict)                      // to print object in proper format
+			{
+				console.log( dict[k]);
+			}
+			*/
+			
+			
+		</script>
+	</body>
+</html>

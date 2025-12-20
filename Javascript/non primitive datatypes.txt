@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Objects</title>
+	</head>
+	<body>
+		<script>
+			let student=['rinki',2];
+			console.log(student);
+			
+		</script>
+	</body>
+</html>

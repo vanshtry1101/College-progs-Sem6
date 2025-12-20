@@ -1,0 +1,32 @@
+<!DOCTYPEhtml>
+<html>
+	<head>
+		<title></title>
+		<script>
+			function show()
+			{
+				var username=document.getElementById("uname").value; 
+				var username=document.getElementById("pass").value; 
+
+			if(username === "admin" && password === "1234")
+			{
+				sessionStorage.setItem("loggedInUser",username);
+				let name= sessionStorge.getItem("loggedInUser");
+				document.getElementById("Username").innerHTML="Login Successful! <br> <h3>Welcom</h3>"+name;
+			}
+			else
+			{
+				alert("Invalid Credential");
+			}
+		</script>
+	</head>
+	<body>
+	<h2> Login Form</h2>
+		<form>
+		User Name: <input type="text" id="uname" placeholder="Enter your name" required><br><br>
+		password:<input type="password" id="pass"> <br><br>
+		<button onclick="show()";>Login<button>
+		<div id="username"></div>
+		</form>
+	</body>
+</html>

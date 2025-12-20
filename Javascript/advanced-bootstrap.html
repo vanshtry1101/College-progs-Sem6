@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>My Website</title>
+</head>
+
+<body>
+
+    <header class="bg-info p-3 shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-primary m-0">My Website</h1>
+
+            <ul class="list-inline m-0">
+                <li class="list-inline-item">
+                    <a href="#" class="btn btn-primary">Login</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="text-decoration-none text-dark">Careers</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="text-decoration-none text-dark">Jobs</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mt-4">
+        <h2>Welcome</h2>
+        <p class="lead">This is my first webpage</p>
+
+        <label for="input1" class="form-label">Name</label>
+        <input id="input1" type="text" class="form-control mb-3">
+
+        <label for="input2" class="form-label">Address</label>
+        <input id="input2" type="text" class="form-control mb-2">
+
+        <span id="help" class="form-text mb-3 d-block">Enter your details above.</span>
+
+        <div class="row mt-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 bg-danger text-white p-3 m-1">
+                Column 1<br>This is column 1
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 bg-danger text-white p-3 m-1">
+                Column 2<br>This is column 2
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 bg-danger text-white p-3 m-1">
+                Column 3<br>This is column 3
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 bg-danger text-white p-3 m-1">
+                Column 4<br>This is column 4
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 bg-danger text-white p-3 m-1">
+                Column 5<br>This is column 5
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 bg-danger text-white p-3 m-1">
+                Column 6<br>This is column 6
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 bg-danger text-white p-3 m-1">
+                Column 7<br>This is column 7
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark p-3 fixed-bottom text-white text-center">
+        <p class="m-0">&copy; All rights reserved <span id="year"></span></p>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>

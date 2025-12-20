@@ -1,0 +1,11 @@
+<html>
+<head>
+	<title>lt</title>
+</head>
+<body>
+	<img src="lighton.png" id="img1">
+	<script>
+	
+	</script>
+</body>
+</html>

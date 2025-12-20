@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id="current"></div>
+		<div id="cur"></div>
+		<div id="cur1"></div>
+		<div id="cur2"></div>
+		<h1>Display greetings</h1>
+		<button type="button" onclick="display();">Greetings</button>
+		<script>
+			function display()
+			{
+				let now=new Date();
+				const hour=now.getHours();
+				
+				//document.write(now);
+				document.getElementById("current").innerHTML="Today is:"+now.toDateString();
+				document.getElementById("cur").innerHTML=now.toDateString();
+				/*if(hour<12)
+				{
+					document.write("Good Morning");
+				}
+				else if(hour>12 || hour>5)
+				{
+					document.write("Good Afternoon");
+				}
+				else{
+					document.write("Good Night");
+				}*/
+				//GB - 24 hours format and IN -12 hours format
+				const time=now.toLocaleTimeString("en-IN");
+				document.getElementById("cur1").innerHTML="current time:"+time;	
+				
+				const date1=now.toLocaleDateString("en-IN");
+				document.getElementById("cur2").innerHTML="current Date.:"+date1;	
+			}
+			setInterval(display,1000);
+			
+		</script>
+	</body>
+</html>

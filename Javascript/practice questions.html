@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Practice questions</title>
+	</head>
+	<body>
+		<script>
+			let mixed=["apple",42,true,null,undefined,{name:'Riya'},[1,2,3]];
+			console.log(mixed);
+			
+				//adding new element  
+			mixed.push("orange");		
+			
+				//removing element
+			mixed.shift();
+			console.log('removing element from array:',mixed);
+			
+				//adding new element at first 
+			mixed.unshift("Grape");
+			console.log('adding new element at first position:',mixed);
+			
+				//remove last element 
+			mixed.pop();
+			console.log('removing last element:',mixed);
+			
+				//find index of 42
+			console.log("index of 42 is:",mixed.indexOf(42)); 	
+			
+				//final array
+			console.log(mixed);
+			
+				//loop
+			for(let arr of mixed)
+			{
+				console.log(typeof(arr));
+			}
+			
+			for(let i in mixed)
+			{
+				console.log(mixed[i]);
+			}
+			
+				//add element after 42
+				mixed.splice(2,0,43)
+			console.log(mixed);		
+		
+			console.table(mixed);
+			console.table({mixed:mixed});
+
+			
+			
+		</script>
+	</body>
+</html>

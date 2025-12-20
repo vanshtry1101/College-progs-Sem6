@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mark sheet</title>
+	</head>
+	<body>
+		<form method="POST">
+		<fieldset>
+		<script>
+			function calculate()
+			{
+				let grade;
+				let s1=document.getElementById("WDT").value;
+				let s2=document.getElementById("C_lang").value;
+				let s3=document.getElementById("Python").value;
+				let total_mark=(s1+s2+s3)/3.0;
+				if(total_mark<=40)
+				{
+					document.write("Pass");
+				}
+				else
+				{
+					document.write("Fail");
+				}
+				
+				if(total_mark<=80)
+				{
+					document.write("Your grade:A");
+				}
+				else if(total_mark=70)
+				{
+					document.write("your garde:B");
+				}
+				else if(total_mark=60)
+				{
+					document.write("your grade:C");
+				}
+				else if(total_mark=50)
+				{
+					document.write("your grade:D");
+				}
+				else if(total_mark=40)
+				{
+					document.write("your grade:D");
+				}
+			}
+		</script>
+		<h2>calculate percentage</h2>
+		Name:<input type="Text" id="name" pattern="^[a-zA-z]&">
+		<br>
+		WDT:<input type="number" id="wdt" pattern="^[0-9]{0,3}$">
+		<br>
+		C_lang:<input type="number" id="c" pattern="^[0-9]{0,3}$">
+		<br>
+		Python:<input type="number" id="python" pattern="^[0-9]{0,3}$">
+		<br>
+		<button onclick="calculate(); target="_self">Calculate marks</button>
+		</fieldset>
+		</form>
+	</body>
+</html>

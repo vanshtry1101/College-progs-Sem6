@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Reminder</title>
+</head>
+<body>
+
+    <h1>Task Reminder</h1>
+    <input type="text" id="item" placeholder="Enter items"><br>
+    <button onclick="addItems()">Add</button>
+    <button onclick="clearItems()">Clear</button>
+    <input type="search" id="searchbox" placeholder="Search item" onkeyup="searchItems()">
+    <table border="1" id="reminder" style="margin-top:10px;border-collapse:collapse;"></table>
+<script>
+	let tasks=JSON.parse(localStorage.getItem("tasks"))||[];		//parse() convert string -> array
+	function storetoLocal()
+	{
+		localStorage.setItem("tasks",JSON.stringify(tasks));        // stringify() convert array into string 
+
+	}
+    //let tasks = [];
+
+    function addItems() 
+	{
+        let text1 = document.getElementById("item").value;
+
+        if (text1 !== "") 
+		{
+            tasks.push(text1);
+			storetoLocal();
+            showTable(tasks);
+            document.getElementById("item").value = "";
+        }
+    }
+
+    function showTable(list) 
+	{
+        let table1 = document.getElementById("reminder");
+        table1.innerHTML = "<tr><th>No.</th><th>Reminder</th><th>Action</th><th>Edit</th></tr>";
+
+        for (let i = 0; i < list.length; i++) 
+		{
+            table1.innerHTML +=
+                "<tr><td>" + (i + 1) + "</td>" +
+                "<td>" + list[i] + "</td>" +
+                "<td><button onclick='deleteItems(" + i + ")'>Delete</button></td>"+
+				"<td><button onclick='editItems(" + i + ")'>Edit</button></td>"
+				"</tr>";
+        }
+    } 
+
+    function deleteItems(index) 
+	{
+        tasks.splice(index, 1);
+		storetoLocal();
+        showTable(tasks);
+		alert("Item Deleted");
+    }
+
+    function clearItems() 
+	{
+        tasks = [];
+		localStorage.removeItem("Tasks");
+		document.getElementById("reminder").innerHTML="";
+        showTable(tasks);
+    }
+	function searchItems()
+	{
+		let searchtext=document.getElementById("searchbox").value.toLowerCase();
+		let result=[];
+		if(searchtext==="")
+		{
+			showTable(tasks);
+			return;
+		}
+		for(let i=0;i<tasks.length;i++)
+		{
+			if(tasks[i].toLowerCase().includes(searchtext))
+			{
+				result.push(tasks[i]);
+			}
+		}
+		storetoLocal();
+		showTable(result);
+	}
+	function editItems(index)
+	{
+		let newtext=prompt("enter updated text:",tasks[index]);
+		
+		if (newtext !==null && newtext.trim() !=="")
+		{
+			tasks[index] = newtext.trim();
+			storetoLocal();
+			showTable(tasks);
+		}
+	}
+	showTable(tasks);
+</script>
+</body>
+</html>
+

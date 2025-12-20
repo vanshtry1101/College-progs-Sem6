@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		
+			<h1>Task Remainder</h1>
+			<input type="text" id="item" placeholder="Enter items"><br>
+			<button onclick="addItems();">Add</button>
+			<button onclick="clearItems();">Clear</button>
+			<input type="search" id="searchbox" placeholder="search item" onkeyup="searchItems()">
+			
+			<table border="1" id="reminder" style="margin-top:10px;border-collapse:collapse;"></table>
+		<script>
+			let tasks=[];
+			function addItems()
+			{
+				let text1=document.getElementById.("item").value;
+				if(text!=="")
+				{
+					tasks.push(text1);
+					showTable(tasks);
+					document.getElementById("item").value="";
+				}
+			}
+			function showTable(lists)
+			{
+				let text1=document.getElementById("reminder")table1.innerHTML="<tr><th>No.</th>"+"<th>Reminder</th><th>Action</th></tr>' ;
+				
+				for( let i=0;i<tasks.length;i++)
+				{
+					table1.innerHTML+="<tr><td>"+(i+1)+"</td>"+
+					"<td>"+tasks[i]+"</td>"+
+					"<td><button onclick='deleteItems("+i")'>Delete</button></tr>"
+					
+				}
+
+			}
+		
+		</script>
+	</body>
+</html>

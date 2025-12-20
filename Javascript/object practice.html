@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>practice questions for object</title>
+	</head>
+	<body>
+		<script>
+			
+			// creating object 
+			let employee={
+				name:'Riya',
+				age:25,
+				isEmployee:true,
+				city:null,
+				email:undefined,
+				skills:["JavaScript","HTML","CSS"],
+				address:{street:"MG Road",zip:380001},
+			};
+			console.log(employee);
+			
+			// adding new property
+			employee.country="India";
+			console.log("Adding new property in employee:",employee);
+			
+			//remove property email
+			delete employee.email;
+			console.log("Deleting property email:",employee);
+			
+			//update property name to raju
+			employee.name="Raju";
+			console.log("Updating the property name to raju:",employee);
+			
+			//insert 'react' as the last element of the skills array.
+			employee.skills[3]="React";
+			console.log(employee);
+			
+			//change the value of the street property to brigade road
+			//employee.address.street="brigade road";
+			console.log(employee);
+			
+			//loop to print type of each property value.
+			for (let emp in employee)
+			{
+				console.log("tyoe of key:",typeof(emp));
+				console.log(emp[emp],typeof(employee[emp]));
+			}
+		</script>
+	</body>
+</html>

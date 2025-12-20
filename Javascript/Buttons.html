@@ -1,0 +1,30 @@
+<!DOCTypeHtml>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h2>Task Remainder</h2>
+		<input type="text" id="item" placeholder="Enter Item">
+		<button onclick="addItems();">Add</button>
+		<button onclick="clearItems();">Clear</button>
+		<table border="5" id="remainder"></table>
+		
+		<script>
+			const addItems=()=>
+			{
+				let text=document.getElementById("item").value;
+			
+				if(text)
+				{
+					document.getElementById("remainder").innerHTML+="<td>"+text+"</td>";
+				}
+				document.getElementById("item").value="";
+			}
+			const clearItems=()=>
+			{
+				document.getElementById("remainder").innerHTML="";
+			};
+		</script>
+	</body>
+</html>

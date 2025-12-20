@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<tilte>objects in Javascript</title>
+	</head>
+	<body>
+		<h1> DOM Manipulation </h1>
+		<div id='para1'>Hello</div>
+		<p class='note'>Javascript</p>
+		
+		<div id='par'>Hello</div>
+		<p class='note'>Javascript1</p>
+		<script>
+			//document.getElementById("para").innerHTML="<i>World</i>";
+			//document.getElementById("para").textContent="<i>World</i>";
+			
+			//let para=document.getElementByID("para1");
+			//para.style.backgroundColor="yellow";
+			//para.style.fontSize="50px";
+			//para.style.fontweight="bold;
+			
+			//let para=document.querySelector("#para");
+			//para.style.backgroundColor="lime";
+			
+			//let note=document.querySelector(".note");
+			//note.style.fontsize="50px";
+			
+			//let par=document.querySelector("div");
+			//par.style.fontweight="bold";			
+			
+			let allnotes=document.querySelectorAll(".note");
+			for(let divi of allnotes)
+			{divi.style.color="blue";}
+			
+		</script>
+	</body>
+</html>
