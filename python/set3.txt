@@ -1,0 +1,200 @@
+SQL> create table student(rollno number(10)primary key,name varchar(10),class varchar(10),dob date);
+
+Table created.
+
+
+SQL> create table course(courseno number(10) primary key, coursename varchar(10),max_marks number(10),pass_marks number(10));
+
+Table created.
+
+
+SQL> create table sc(rollno number(10),courseno number(10),marks number(10), primary key(rollno,courseno),foreign key(rollno)references student(rollno),foreign key(courseno)references course(courseno));
+
+Table created.
+
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROLLNO                                    NOT NULL NUMBER(10)
+ NAME                                               VARCHAR2(10)
+ CLASS                                              VARCHAR2(10)
+ DOB                                                DATE
+
+SQL> insert into student values(&rollno,'&name','&class','&dob');
+Enter value for rollno: 1
+Enter value for name: Mohit
+Enter value for class: A
+Enter value for dob: 26-Dec-1999
+old   1: insert into student values(&rollno,'&name','&class','&dob')
+new   1: insert into student values(1,'Mohit','A','26-Dec-1999')
+
+1 row created.
+
+
+
+SQL> /
+Enter value for rollno: 2
+Enter value for name: Rinki
+Enter value for class: A
+Enter value for dob: 05-Sep-2001
+old   1: insert into student values(&rollno,'&name','&class','&dob')
+new   1: insert into student values(2,'Rinki','A','05-Sep-2001')
+
+1 row created.
+
+SQL> /
+Enter value for rollno: 3
+Enter value for name: Ayush
+Enter value for class: B
+Enter value for dob: 04-Jun-2003
+old   1: insert into student values(&rollno,'&name','&class','&dob')
+new   1: insert into student values(3,'Ayush','B','04-Jun-2003')
+
+1 row created.
+
+SQL> /
+Enter value for rollno: 4
+Enter value for name: Jenish
+Enter value for class: B
+Enter value for dob: 09-Jan-2002
+old   1: insert into student values(&rollno,'&name','&class','&dob')
+new   1: insert into student values(4,'Jenish','B','09-Jan-2002')
+
+1 row created.
+
+SQL> insert into course values(&courseno,'&coursename',&max_marks,&pass_marks);
+Enter value for courseno: 001
+Enter value for coursename: Python
+Enter value for max_marks: 100
+Enter value for pass_marks: 35
+old   1: insert into course values(&courseno,'&coursename',&max_marks,&pass_marks)
+new   1: insert into course values(001,'Python',100,35)
+
+1 row created.
+
+SQL> /
+Enter value for courseno: 002
+Enter value for coursename: DBMS
+Enter value for max_marks: 100
+Enter value for pass_marks: 35
+old   1: insert into course values(&courseno,'&coursename',&max_marks,&pass_marks)
+new   1: insert into course values(002,'DBMS',100,35)
+
+1 row created.
+
+SQL> /
+Enter value for courseno: 003
+Enter value for coursename: Linux
+Enter value for max_marks: 100
+Enter value for pass_marks: 35
+old   1: insert into course values(&courseno,'&coursename',&max_marks,&pass_marks)
+new   1: insert into course values(003,'Linux',100,35)
+
+1 row created.
+
+SQL> /
+Enter value for courseno: 004
+Enter value for coursename: C
+Enter value for max_marks: 100
+Enter value for pass_marks: 35
+old   1: insert into course values(&courseno,'&coursename',&max_marks,&pass_marks)
+new   1: insert into course values(004,'C',100,35)
+
+1 row created.
+
+
+SQL> insert into sc values(&rollno,'&cousrno',&marks);
+Enter value for rollno: 1
+Enter value for cousrno: 001
+Enter value for marks: 46
+old   1: insert into sc values(&rollno,'&cousrno',&marks)
+new   1: insert into sc values(1,'001',46)
+
+1 row created.
+
+SQL> /
+Enter value for rollno: 2
+Enter value for cousrno: 02
+Enter value for marks: 85
+old   1: insert into sc values(&rollno,'&cousrno',&marks)
+new   1: insert into sc values(2,'02',85)
+
+1 row created.
+
+
+SQL> /
+Enter value for rollno: 3
+Enter value for cousrno: 03
+Enter value for marks: 75
+old   1: insert into sc values(&rollno,'&cousrno',&marks)
+new   1: insert into sc values(3,'03',75)
+
+1 row created.
+
+
+1 row created.
+
+SQL> /
+Enter value for rollno: 4
+Enter value for cousrno: 04
+Enter value for marks: 66
+old   1: insert into sc values(&rollno,'&cousrno',&marks)
+new   1: insert into sc values(4,'04',66)
+
+1 row created.
+
+
+
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROLLNO                                    NOT NULL NUMBER(10)
+ NAME                                               VARCHAR2(10)
+ CLASS                                              VARCHAR2(10)
+ DOB                                                DATE
+
+SQL> desc course;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COURSENO                                  NOT NULL NUMBER(10)
+ COURSENAME                                         VARCHAR2(10)
+ MAX_MARKS                                          NUMBER(10)
+ PASS_MARKS                                         NUMBER(10)
+
+SQL> desc sc;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROLLNO                                    NOT NULL NUMBER(10)
+ COURSENO                                  NOT NULL NUMBER(10)
+ MARKS                                              NUMBER(10)
+
+
+SQL> select*from student;
+
+    ROLLNO NAME       CLASS      DOB
+---------- ---------- ---------- ---------
+         1 Mohit      A          26-DEC-99
+         2 Rinki      A          05-SEP-01
+         3 Ayush      B          04-JUN-03
+         4 Jenish     B          09-JAN-02
+
+SQL> select*from course;
+
+  COURSENO COURSENAME  MAX_MARKS PASS_MARKS
+---------- ---------- ---------- ----------
+         1 Python            100         35
+         2 DBMS              100         35
+         3 Linux             100         35
+         4 C                 100         35
+
+SQL> select*from sc;
+
+    ROLLNO   COURSENO      MARKS
+---------- ---------- ----------
+         1          1         46
+         2          2         85
+         3          3         75
+         4          4         66
+
