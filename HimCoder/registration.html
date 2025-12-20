@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Student Registration</h2>
+    <form action="">
+        <label for="">First Name</label>
+        <input type="text" id="fname"><br>
+        <label for="">Last Name</label>
+        <input type="text" id="lname"><br>
+        <label for="">Email</label>
+        <input type="email" id="email"><br>
+        <label for="">Password</label>
+        <input type="password" id="password"><br>
+        <input type="button" id="submit" value="register" onclick="showMessage()">
+
+    </form>
+    <p id="message" style="color:teal;"></p>
+    <script>
+        function showMessage(){
+            document.getElementById("message").innerHTML =
+                "Registration Successful !";
+        }
+    </script>
+</body>
+</html>
